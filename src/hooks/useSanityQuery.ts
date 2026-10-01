@@ -2,9 +2,7 @@ import { useEffect, useState } from 'react'
 
 import { API_URL } from '../lib/sanity'
 
-// Generisk Custom Hook til GROQ – samme opbygning som i lektionen,
-// men med type T, loading og error, så det kan bruges til alle data.
-// Send null som query for at springe hentning over.
+
 export function useSanityQuery<T>(query: string | null) {
   const [data, setData] = useState<T | null>(null)
   const [loading, setLoading] = useState(Boolean(query))
